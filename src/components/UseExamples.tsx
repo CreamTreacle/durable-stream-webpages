@@ -16,6 +16,7 @@ const lianSandboxes = [
 function UseExamples() {
   return (
     <section className="use-examples-section">
+      <div className="section-mark section-mark-capitalized">Examples</div>
       <div className="use-examples-header">
         <h2>
           Your Stack <span>{"\u00A0\u00A0×\u00A0\u00A0"}</span> Snakream

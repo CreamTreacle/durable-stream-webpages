@@ -17,8 +17,9 @@ function DemoSection() {
     <section className="demo-section" id="demo">
       <div className="demo-copy">
         <div className="demo-copy-main">
+          <div className="section-mark">DEMO</div>
           <h2>
-            Make <span>background</span> agents work forever
+            Make <span className="demo-highlight">background</span> agents work forever
           </h2>
           <p className="demo-description">
             Agents work in disposal sandboxes. Runtime and sessions persists in S3,
