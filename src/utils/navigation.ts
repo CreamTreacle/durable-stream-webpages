@@ -1,6 +1,7 @@
 export const HOME_PATH = "/";
 export const PRICING_PATH = "/pricing";
 export const BLOG_PATH = "/blog";
+export const BLOG_GHOST_PATH = "/blog/ghost-outside-the-shell";
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -20,6 +21,10 @@ export function getCurrentAppPath(pathname = window.location.pathname) {
 
   if (normalizedPath === BLOG_PATH) {
     return BLOG_PATH;
+  }
+
+  if (normalizedPath === BLOG_GHOST_PATH) {
+    return BLOG_GHOST_PATH;
   }
 
   return HOME_PATH;
