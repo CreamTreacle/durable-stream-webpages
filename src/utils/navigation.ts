@@ -1,5 +1,6 @@
 export const HOME_PATH = "/";
 export const PRICING_PATH = "/pricing";
+export const BLOG_PATH = "/blog";
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -13,7 +14,15 @@ export function getCurrentAppPath(pathname = window.location.pathname) {
     basePath && pathname.startsWith(basePath) ? pathname.slice(basePath.length) || HOME_PATH : pathname;
   const normalizedPath = pathWithoutBase.replace(/\/+$/, "") || HOME_PATH;
 
-  return normalizedPath === PRICING_PATH ? PRICING_PATH : HOME_PATH;
+  if (normalizedPath === PRICING_PATH) {
+    return PRICING_PATH;
+  }
+
+  if (normalizedPath === BLOG_PATH) {
+    return BLOG_PATH;
+  }
+
+  return HOME_PATH;
 }
 
 export function isInternalAppPath(path: string) {

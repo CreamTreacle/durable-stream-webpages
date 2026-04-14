@@ -11,7 +11,7 @@ function HomePage() {
         navItems={[
           { label: "Pricing", href: "/pricing" },
           { label: "Docs", disabled: true },
-          { label: "Blog", disabled: true },
+          { label: "Blog", href: "/blog" },
           { label: "Projects", disabled: true, caret: true },
         ]}
       />

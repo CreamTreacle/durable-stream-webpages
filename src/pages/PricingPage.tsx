@@ -53,9 +53,9 @@ function PricingPage() {
     <>
       <Header
         navItems={[
-          { label: "Pricing", href: "/pricing" },
+          { label: "Pricing", href: "/pricing", active: true },
           { label: "Docs", disabled: true },
-          { label: "Blog", disabled: true },
+          { label: "Blog", href: "/blog" },
           { label: "Projects", disabled: true, caret: true },
         ]}
       />

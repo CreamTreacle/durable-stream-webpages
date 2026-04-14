@@ -13,10 +13,11 @@ type HeaderProps = {
   navItems: HeaderNavItem[];
   ctaHref?: string;
   ctaLabel?: string;
+  className?: string;
 };
 
-function Header({ navItems, ctaHref = "#waitlist", ctaLabel = "Book Demo" }: HeaderProps) {
-  const handleLinkClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+function Header({ navItems, ctaHref = "#waitlist", ctaLabel = "Book Demo", className }: HeaderProps) {
+  const handleLinkClick = (href: string) => (event: React.MouseEvent<HTMLElement>) => {
     if (!isInternalAppPath(href)) {
       return;
     }
@@ -26,7 +27,7 @@ function Header({ navItems, ctaHref = "#waitlist", ctaLabel = "Book Demo" }: Hea
   };
 
   return (
-    <header className="site-header">
+    <header className={className ? `site-header ${className}` : "site-header"}>
       <div className="header-primary">
         <a
           className="header-brand"
@@ -38,7 +39,7 @@ function Header({ navItems, ctaHref = "#waitlist", ctaLabel = "Book Demo" }: Hea
           <span className="header-brand-divider" aria-hidden="true">
             |
           </span>
-          <span className="header-brand-wordmark">
+          <span className="header-brand-wordmark" onClick={handleLinkClick("/")}>
             <span className="header-brand-wordmark-accent">Durable</span>
             <span className="header-brand-wordmark-primary"> Session</span>
           </span>

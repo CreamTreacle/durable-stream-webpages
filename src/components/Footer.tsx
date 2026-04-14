@@ -1,6 +1,6 @@
 import linkedInIcon from "../assets/Social icon-linkedIn.svg";
 import xIcon from "../assets/Social icon-X.svg";
-import { buildAppHref, navigateTo } from "../utils/navigation";
+import { buildAppHref, isInternalAppPath, navigateTo } from "../utils/navigation";
 
 type FooterLink = {
   label: string;
@@ -15,16 +15,20 @@ const footerColumns = [
   {
     title: "Company",
     links: [
-      { label: "Blogs" },
+      { label: "Blogs", href: "/blog" },
       { label: "Contact Us" },
     ] satisfies FooterLink[],
   },
 ] as const;
 
 function Footer() {
-  const handlePricingClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleLinkClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isInternalAppPath(href)) {
+      return;
+    }
+
     event.preventDefault();
-    navigateTo("/pricing");
+    navigateTo(href);
   };
 
   return (
@@ -53,12 +57,12 @@ function Footer() {
             <p className="footer-nav-title">{column.title}</p>
             <div className="footer-nav-links">
               {column.links.map((link) =>
-                "href" in link ? (
+                link.href ? (
                   <a
                     key={link.label}
                     className="footer-nav-link"
                     href={buildAppHref(link.href)}
-                    onClick={handlePricingClick}
+                    onClick={handleLinkClick(link.href)}
                   >
                     {link.label}
                   </a>
