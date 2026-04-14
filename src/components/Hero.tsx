@@ -3,17 +3,17 @@ function Hero() {
     <section className="hero-section">
       <div className="hero-lines" aria-hidden="true" />
       <div className="hero-content">
-        <h1>sandbox is ephemeral your work lives long</h1>
+        <h1>Sessions outlive harness</h1>
         <p>
-          <span>Run coding agents that never lose state.</span>
-          <span>Persistent filesystem and durable sessions.</span>
+          <span>Persist agent events in remote streams</span>
+          <span>and resume execution for long running agents.</span>
         </p>
         <div className="hero-actions">
-          <a className="button button-primary" href="#demo">
-            Try Demo
+          <a className="button button-terminal button-terminal-primary hero-primary-cta" href="#waitlist">
+            [ Book a demo ]
           </a>
-          <a className="button button-secondary" href="#waitlist">
-            Join Waitlist
+          <a className="hero-secondary-cta" href="#how-it-works">
+            How it Works →
           </a>
         </div>
       </div>

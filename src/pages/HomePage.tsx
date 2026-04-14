@@ -1,8 +1,11 @@
-import DemoSection from "../components/DemoSection";
+import CallToActionSection from "../components/CallToActionSection";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import UseExamples from "../components/UseExamples";
+import HowItWorksSection from "../components/HowItWorksSection";
+import IngestionStreamSection from "../components/IngestionStreamSection";
+import OpenProtocolSection from "../components/OpenProtocolSection";
+import SearchHistorySection from "../components/SearchHistorySection";
 
 function HomePage() {
   return (
@@ -15,10 +18,13 @@ function HomePage() {
           { label: "Projects", disabled: true, caret: true },
         ]}
       />
-      <main className="page-content">
+      <main className="page-content homepage-content">
         <Hero />
-        <DemoSection />
-        <UseExamples />
+        <HowItWorksSection />
+        <IngestionStreamSection />
+        <OpenProtocolSection />
+        <SearchHistorySection />
+        <CallToActionSection />
       </main>
       <Footer />
     </>
