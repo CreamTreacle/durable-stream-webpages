@@ -11,7 +11,7 @@ const introPoints = [
 const pricingPlans = [
   {
     name: "Pay as you go",
-    description: "For large-scale applications running Internet scale workloads.",
+    description: "For any application type that requires agile scaling, billing is per byte per month.",
     rates: [
       { label: "Writes", value: "$0.10 / GB" },
       { label: "Reads", value: "$0.05 / GB" },
@@ -33,7 +33,7 @@ const pricingPlans = [
   },
   {
     name: "Custom pricing",
-    description: "Designed for businesses of all sizes, requiring on-premise setup.",
+    description: "For enterprise-level requirements: SOC2, auditing, and BYOC, etc.",
     rates: [],
     features: [
       "SOC 2 Type II",
@@ -53,14 +53,11 @@ function PricingPage() {
     <>
       <Header
         navItems={[
-          { label: "Pricing", href: "/pricing", active: true },
+          { label: "Pricing", href: "/pricing" },
           { label: "Docs", disabled: true },
           { label: "Blog", disabled: true },
           { label: "Projects", disabled: true, caret: true },
         ]}
-        ctaHref="#waitlist"
-        ctaLabel="Book Demo"
-        ctaVariant="terminal"
       />
 
       <main className="pricing-page">

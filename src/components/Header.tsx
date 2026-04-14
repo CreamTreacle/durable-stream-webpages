@@ -1,4 +1,4 @@
-import discordIcon from "../assets/discord icon.svg";
+import durableSessionLogo from "../assets/durable session T logo.svg";
 import { buildAppHref, isInternalAppPath, navigateTo } from "../utils/navigation";
 
 type HeaderNavItem = {
@@ -11,19 +11,11 @@ type HeaderNavItem = {
 
 type HeaderProps = {
   navItems: HeaderNavItem[];
-  ctaHref: string;
-  ctaLabel: string;
-  ctaVariant?: "default" | "terminal";
-  showDiscord?: boolean;
+  ctaHref?: string;
+  ctaLabel?: string;
 };
 
-function Header({
-  navItems,
-  ctaHref,
-  ctaLabel,
-  ctaVariant = "default",
-  showDiscord = false,
-}: HeaderProps) {
+function Header({ navItems, ctaHref = "#waitlist", ctaLabel = "Book Demo" }: HeaderProps) {
   const handleLinkClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (!isInternalAppPath(href)) {
       return;
@@ -33,22 +25,23 @@ function Header({
     navigateTo(href);
   };
 
-  const ctaClassName =
-    ctaVariant === "terminal"
-      ? "button button-primary button-header button-header-terminal"
-      : "button button-primary button-header";
-
   return (
     <header className="site-header">
       <div className="header-primary">
         <a
-          className="brand brand-link"
-          aria-label="Long Code"
+          className="header-brand"
+          aria-label="Durable Session"
           href={buildAppHref("/")}
           onClick={handleLinkClick("/")}
         >
-          <span className="brand-primary">Long </span>
-          <span className="brand-accent">Code</span>
+          <img className="header-brand-logo" src={durableSessionLogo} alt="" />
+          <span className="header-brand-divider" aria-hidden="true">
+            |
+          </span>
+          <span className="header-brand-wordmark">
+            <span className="header-brand-wordmark-accent">Durable</span>
+            <span className="header-brand-wordmark-primary"> Session</span>
+          </span>
         </a>
 
         <nav className="nav-links" aria-label="Primary">
@@ -79,13 +72,8 @@ function Header({
       </div>
 
       <div className="header-actions">
-        {showDiscord ? (
-          <a className="icon-button" href="https://discord.com" aria-label="Discord">
-            <img src={discordIcon} alt="" />
-          </a>
-        ) : null}
         <a
-          className={ctaClassName}
+          className="button button-primary button-header button-header-terminal"
           href={isInternalAppPath(ctaHref) ? buildAppHref(ctaHref) : ctaHref}
           onClick={handleLinkClick(ctaHref)}
         >

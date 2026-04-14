@@ -10,12 +10,10 @@ function HomePage() {
       <Header
         navItems={[
           { label: "Pricing", href: "/pricing" },
-          { label: "Docs", href: "#docs" },
-          { label: "Lian", href: "#demo" },
+          { label: "Docs", disabled: true },
+          { label: "Blog", disabled: true },
+          { label: "Projects", disabled: true, caret: true },
         ]}
-        ctaHref="#waitlist"
-        ctaLabel="Start Project"
-        showDiscord
       />
       <main className="page-content">
         <Hero />
