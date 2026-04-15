@@ -1,11 +1,14 @@
-import { buildAppHref, getBlogPostPath, navigateTo } from "../utils/navigation";
+import { buildAppHref, getBlogPostPath, getDocsPagePath, navigateTo } from "../utils/navigation";
 
 function Hero() {
-  const howItWorksPath = getBlogPostPath("ghost-outside-the-shell");
-  const handleHowItWorksClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    navigateTo(howItWorksPath);
-  };
+  const quickstartPath = getDocsPagePath("quickstart");
+  const thesisPath = getBlogPostPath("ghost-outside-the-shell");
+
+  const handleInternalClick =
+    (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      navigateTo(path);
+    };
 
   return (
     <section className="hero-section">
@@ -17,10 +20,18 @@ function Hero() {
           <span>and resume execution for long-running agents.</span>
         </p>
         <div className="hero-actions">
-          <a className="button button-terminal button-terminal-primary hero-primary-cta" href="https://cal.com/tzu-gwo/hi-from-tonbo">
-            [ Book demo ]
+          <a
+            className="button button-terminal button-terminal-primary hero-primary-cta"
+            href={buildAppHref(quickstartPath)}
+            onClick={handleInternalClick(quickstartPath)}
+          >
+            [ Get started ]
           </a>
-          <a className="hero-secondary-cta" href={buildAppHref(howItWorksPath)} onClick={handleHowItWorksClick}>
+          <a
+            className="hero-secondary-cta"
+            href={buildAppHref(thesisPath)}
+            onClick={handleInternalClick(thesisPath)}
+          >
             Read the post →
           </a>
         </div>
