@@ -3,15 +3,15 @@ import arrowIcon from "../assets/Arrow .svg";
 const steps = [
   {
     title: "Connect",
-    description: "Point Tonbo at your agent. One command or API call.",
+    description: "Point Durable Sessions at your agent. One command or API call.",
   },
   {
-    title: "Work",
-    description: "Every event streams to Tonbo automatically.",
+    title: "Stream",
+    description: "Every tool call, message, and error flows in automatically.",
   },
   {
     title: "Resume",
-    description: "Pick up where you left off even when sandbox dies.",
+    description: "Pick up where you left off, even when the sandbox dies.",
   },
   {
     title: "Search",

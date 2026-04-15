@@ -1,7 +1,7 @@
 export const HOME_PATH = "/";
 export const PRICING_PATH = "/pricing";
-export const BLOG_PATH = "/blog";
-export const BLOG_POST_PREFIX = "/blog/";
+export const BLOG_PATH = "/blogs";
+export const BLOG_POST_PREFIX = "/blogs/";
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 

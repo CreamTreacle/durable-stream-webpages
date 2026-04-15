@@ -25,12 +25,12 @@ function App() {
   useEffect(() => {
     document.title =
       currentPath === PRICING_PATH
-        ? "Pricing | Long Code"
+        ? "Pricing | Durable Sessions"
         : currentPath === BLOG_PATH
-          ? "Blog | Long Code"
+          ? "Blogs | Durable Sessions"
           : currentBlogPost
-            ? `${currentBlogPost.title} | Long Code`
-            : "Long Code";
+            ? `${currentBlogPost.title} | Durable Sessions`
+            : "Durable Sessions";
   }, [currentBlogPost, currentPath]);
 
   return (

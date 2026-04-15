@@ -4,7 +4,7 @@ function OpenProtocolSection() {
       <div className="section-mark section-mark-centered">Open protocol</div>
 
       <div className="protocol-header">
-        <h2>Built on open HTTP protocol.</h2>
+        <h2>Built on open HTTP.</h2>
         <p>POST to append, GET to read, SSE to subscribe. No SDK required.</p>
       </div>
 

@@ -16,9 +16,15 @@ function BlogPage() {
       <Header
         navItems={[
           { label: "Pricing", href: "/pricing" },
-          { label: "Docs", disabled: true },
-          { label: "Blog", href: "/blog", active: true },
-          { label: "Projects", disabled: true, caret: true },
+          { label: "Blogs", href: "/blogs", active: true },
+          {
+            label: "Projects",
+            caret: true,
+            children: [
+              { label: "Tonbo", href: "https://tonbo.io/" },
+              { label: "Harness", href: "https://harness.tonbo.dev/" },
+            ],
+          },
         ]}
       />
 
@@ -26,8 +32,9 @@ function BlogPage() {
         <section className="blog-shell blog-overview">
           <h1>Blogs</h1>
           <p>
-            Our research teams investigate the safety, inner workings, and societal impacts of AI models – so that
-            artificial intelligence has a positive impact as it becomes increasingly capable.
+            Engineering notes on durable agent infrastructure — why an agent's session should outlive its harness and
+            sandbox, and how we build session services that stay fast, searchable, and cheap as coding agents run for
+            hours.
           </p>
         </section>
 

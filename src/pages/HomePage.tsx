@@ -13,9 +13,15 @@ function HomePage() {
       <Header
         navItems={[
           { label: "Pricing", href: "/pricing" },
-          { label: "Docs", disabled: true },
-          { label: "Blog", href: "/blog" },
-          { label: "Projects", disabled: true, caret: true },
+          { label: "Blogs", href: "/blogs" },
+          {
+            label: "Projects",
+            caret: true,
+            children: [
+              { label: "Tonbo", href: "https://tonbo.io/" },
+              { label: "Harness", href: "https://harness.tonbo.dev/" },
+            ],
+          },
         ]}
       />
       <main className="page-content homepage-content">

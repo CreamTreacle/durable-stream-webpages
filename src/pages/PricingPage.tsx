@@ -3,15 +3,15 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const introPoints = [
-  "Sign up for a free trial with no credit card required",
-  "Up to $100 free credit to start",
+  "Free trial with no credit card required",
+  "Up to $100 in free credits to start",
   "Pay as you go with usage-based pricing",
 ];
 
 const pricingPlans = [
   {
     name: "Pay as you go",
-    description: "For any application type that requires agile scaling, billing is per byte per month.",
+    description: "Usage-based billing that scales with your workload — no seats, no minimums.",
     rates: [
       { label: "Writes", value: "$0.10 / GB" },
       { label: "Reads", value: "$0.05 / GB" },
@@ -28,12 +28,12 @@ const pricingPlans = [
       "99.99% SLA",
     ],
     ctaLabel: "[ Book Demo ]",
-    ctaHref: "#waitlist",
+    ctaHref: "https://cal.com/tzu-gwo/hi-from-tonbo",
     ctaVariant: "primary" as const,
   },
   {
     name: "Custom pricing",
-    description: "For enterprise-level requirements: SOC2, auditing, and BYOC, etc.",
+    description: "For enterprise requirements like SOC 2, auditing, and BYOC.",
     rates: [],
     features: [
       "SOC 2 Type II",
@@ -42,8 +42,8 @@ const pricingPlans = [
       "Self-hosted deployment",
       "Dedicated support",
     ],
-    ctaLabel: "Contact US",
-    ctaHref: "#waitlist",
+    ctaLabel: "Contact Us",
+    ctaHref: "mailto:contact@tonbo.io",
     ctaVariant: "secondary" as const,
   },
 ];
@@ -54,9 +54,15 @@ function PricingPage() {
       <Header
         navItems={[
           { label: "Pricing", href: "/pricing", active: true },
-          { label: "Docs", disabled: true },
-          { label: "Blog", href: "/blog" },
-          { label: "Projects", disabled: true, caret: true },
+          { label: "Blogs", href: "/blogs" },
+          {
+            label: "Projects",
+            caret: true,
+            children: [
+              { label: "Tonbo", href: "https://tonbo.io/" },
+              { label: "Harness", href: "https://harness.tonbo.dev/" },
+            ],
+          },
         ]}
       />
 
@@ -74,7 +80,7 @@ function PricingPage() {
               ))}
             </ul>
 
-            <a className="button button-terminal button-terminal-primary pricing-hero-cta" href="#waitlist">
+            <a className="button button-terminal button-terminal-primary pricing-hero-cta" href="https://cal.com/tzu-gwo/hi-from-tonbo">
               [ Book Demo ]
             </a>
           </div>

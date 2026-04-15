@@ -19,9 +19,15 @@ function BlogPostPage({ post }: BlogPostPageProps) {
       <Header
         navItems={[
           { label: "Pricing", href: "/pricing" },
-          { label: "Docs", disabled: true },
-          { label: "Blog", href: "/blog", active: true },
-          { label: "Projects", disabled: true, caret: true },
+          { label: "Blogs", href: "/blogs", active: true },
+          {
+            label: "Projects",
+            caret: true,
+            children: [
+              { label: "Tonbo", href: "https://tonbo.io/" },
+              { label: "Harness", href: "https://harness.tonbo.dev/" },
+            ],
+          },
         ]}
       />
 

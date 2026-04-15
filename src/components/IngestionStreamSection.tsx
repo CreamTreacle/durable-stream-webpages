@@ -59,7 +59,7 @@ function IngestionStreamSection() {
         <div className="ingestion-grid">
           <div className="ingestion-copy-block">
             <div className="ingestion-title" role="heading" aria-level={2}>
-              <p>Ingest coding agent sessions out of</p>
+              <p>Ingest coding agent sessions from</p>
               <p>
                 <span className="ingestion-title-dynamic" aria-live="polite">
                   <span className="ingestion-title-dynamic-text" key={activeHarnessLabel}>
@@ -129,9 +129,9 @@ function IngestionStreamSection() {
             onMouseEnter={handleFlowAreaEnter}
             onMouseLeave={handleFlowAreaLeave}
           >
-            <h3>Durable in S3</h3>
+            <h3>Durable in your S3</h3>
             <p>
-              Session data can live in its own isolated bucket. Export your data or
+              Session data lives in its own isolated bucket. Export your data or
               migrate at any time.
             </p>
           </div>

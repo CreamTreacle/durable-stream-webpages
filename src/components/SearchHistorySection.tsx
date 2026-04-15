@@ -38,11 +38,14 @@ function SearchHistorySection() {
         <div className="search-window-body">
           <div className="search-input-shell">
             <div className="search-input-icon" aria-hidden="true" />
-            <span className="search-input-text">stripe webhook handler</span>
-            <span className="search-input-clear">x</span>
+            <span className="search-input-text">
+              stripe webhook handler
+              <span className="search-input-cursor" aria-hidden="true" />
+            </span>
+            <span className="search-input-clear" aria-hidden="true">✕</span>
           </div>
 
-          <p className="search-result-summary">4 results · 2 sessions · 18,402 total events</p>
+          <p className="search-result-summary">4 events · 2 sessions · 18,402 indexed</p>
 
           <div className="search-result-list">
             {searchResults.map((result) => (
