@@ -1062,8 +1062,18 @@ button {
 }
 
 .search-event-kind {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
   font-size: 14px;
   line-height: 1.4;
+}
+
+.search-event-kind-icon {
+  display: block;
+  flex: none;
+  height: 14px;
+  width: 14px;
 }
 
 .search-event-kind-tool {
@@ -1551,7 +1561,7 @@ button {
   flex: 1 0 auto;
   flex-direction: column;
   gap: 16px;
-  padding: 32px 24px 96px;
+  padding: 32px 24px 160px;
   width: 100%;
 }
 
@@ -1569,7 +1579,7 @@ button {
   gap: 24px;
   max-width: var(--blog-overview-width);
   padding-inline: 64px;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
   padding-top: 80px;
 }
 
@@ -1627,13 +1637,13 @@ button {
 
 .pricing-plans-section {
   padding-inline: 0;
-  padding-top: 112px;
+  padding-top: 136px;
 }
 
 .pricing-plan-list {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 80px;
   padding-inline: clamp(24px, 12vw, 160px);
 }
 
@@ -1669,7 +1679,6 @@ button {
   font-size: 16px;
   line-height: 1.45;
   margin: 0;
-  max-width: 340px;
 }
 
 .pricing-rate-list {
