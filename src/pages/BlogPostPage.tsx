@@ -8,14 +8,42 @@ type BlogPostPageProps = {
   post: BlogPost;
 };
 
+const ORIGIN = "https://sessions.tonbo.dev";
+
 function BlogPostPage({ post }: BlogPostPageProps) {
   const handleMetaClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     navigateTo(BLOG_PATH);
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.subtitle ?? post.summary,
+    image: post.coverImage ? `${ORIGIN}${post.coverImage}` : undefined,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Tzu Gwo",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Durable Sessions",
+      url: ORIGIN,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${ORIGIN}/blogs/${post.slug}`,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <Header
         navItems={[
           { label: "Pricing", href: "/pricing" },

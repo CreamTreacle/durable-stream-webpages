@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d2021" />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>404 · Durable Sessions</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+      body {
+        align-items: center;
+        background: #1d2021;
+        color: #d5c4a1;
+        display: flex;
+        font-family:
+          "IBM Plex Sans",
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        justify-content: center;
+        padding: 48px 24px;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 560px;
+        text-align: center;
+      }
+      .code {
+        color: #7c6f64;
+        font-family:
+          "SFMono-Regular",
+          "Consolas",
+          monospace;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+      }
+      h1 {
+        color: #f9f5d7;
+        font-size: clamp(40px, 8vw, 64px);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1.08;
+        margin: 0;
+      }
+      p {
+        color: #a89984;
+        font-size: 17px;
+        line-height: 1.618;
+        margin: 0;
+      }
+      a {
+        align-items: center;
+        border: 1px solid #458588;
+        border-radius: 4px;
+        color: #f9f5d7;
+        display: inline-flex;
+        font-family:
+          "SFMono-Regular",
+          "Consolas",
+          monospace;
+        font-size: 14px;
+        justify-content: center;
+        min-height: 42px;
+        padding: 8px 24px;
+        text-decoration: none;
+        transition: background-color 160ms ease;
+      }
+      a:hover,
+      a:focus-visible {
+        background: rgba(69, 133, 136, 0.18);
+        outline: none;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="code">$ session.find('/404') → event not in log</p>
+      <h1>404 · Lost in the stream</h1>
+      <p>The page you're looking for isn't in this session. It may have moved, or it never existed.</p>
+      <div class="actions">
+        <a href="/">[ back to home ]</a>
+        <a href="/blogs">[ read the blog ]</a>
+      </div>
+    </main>
+  </body>
+</html>

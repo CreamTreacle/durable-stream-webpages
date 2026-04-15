@@ -6,8 +6,12 @@ import HomePage from "./pages/HomePage";
 import PricingPage from "./pages/PricingPage";
 import { BLOG_PATH, getBlogSlugFromPath, getCurrentAppPath, PRICING_PATH } from "./utils/navigation";
 
-function App() {
-  const [currentPath, setCurrentPath] = useState(() => getCurrentAppPath());
+type AppProps = {
+  initialUrl?: string;
+};
+
+function App({ initialUrl }: AppProps) {
+  const [currentPath, setCurrentPath] = useState(() => getCurrentAppPath(initialUrl));
   const currentBlogSlug = getBlogSlugFromPath(currentPath);
   const currentBlogPost = currentBlogSlug ? getBlogPostBySlug(currentBlogSlug) : undefined;
 

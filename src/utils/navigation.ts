@@ -10,9 +10,13 @@ export function buildAppHref(path: string) {
   return `${basePath}${normalizedPath === HOME_PATH ? "/" : normalizedPath}`;
 }
 
-export function getCurrentAppPath(pathname = window.location.pathname) {
+export function getCurrentAppPath(pathname?: string) {
+  const resolvedPathname =
+    pathname ?? (typeof window !== "undefined" ? window.location.pathname : HOME_PATH);
   const pathWithoutBase =
-    basePath && pathname.startsWith(basePath) ? pathname.slice(basePath.length) || HOME_PATH : pathname;
+    basePath && resolvedPathname.startsWith(basePath)
+      ? resolvedPathname.slice(basePath.length) || HOME_PATH
+      : resolvedPathname;
   const normalizedPath = pathWithoutBase.replace(/\/+$/, "") || HOME_PATH;
 
   if (normalizedPath === PRICING_PATH) {
